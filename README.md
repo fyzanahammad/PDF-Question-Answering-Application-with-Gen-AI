@@ -37,7 +37,4 @@ The application processes the uploaded PDF files to extract text, which is then 
    ```
 
 ## Contributing
-Feel free to fork this project and submit pull requests. You can also open issues if you find bugs or have suggestions for improvements.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Feel free to reach out, if you find bugs or have suggestions for improvements.
