@@ -11,12 +11,11 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGener
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 
-# Accessing a secret
-api_key = st.secrets["GOOGLE_API_KEY"]
-
+# Load environment variables
+load_dotenv()
 
 # Configure GenAI with the API key
-genai.configure()
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
 def convert_pdf_to_markdown(input_path, output_folder, langs='English'):
     output_dir = os.path.join(output_folder, os.path.basename(input_path).replace('.pdf', ''))
