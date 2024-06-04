@@ -35,7 +35,7 @@ def get_markdown_text(markdown_file):
         text = file.read()
     return text
 
-def get_unique_filename(base_path, base_name, extension):
+def get_unique_filename(base_path, extension):
     counter = 0
     new_path = f"{base_path}_{counter}{extension}"
     while os.path.exists(new_path):
@@ -53,7 +53,7 @@ def get_pdf_text(pdf_docs, output_folder, langs='English', progress=None):
         
         # Generate a new file name to avoid any issues with original file names
         base_path = os.path.join(output_folder, f"temp_pdf_{i}")
-        pdf_path = get_unique_filename(base_path, f"temp_pdf_{i}", ".pdf")
+        pdf_path = get_unique_filename(base_path, ".pdf")
         with open(pdf_path, 'wb') as f:
             f.write(pdf.getbuffer())
         
